@@ -41,7 +41,9 @@ function Checkout2({product}:any) {
                   "signature": "",
                   "signed_field_names": "total_amount,transaction_uuid,product_code",
                   // "success_url": `https://babish9887-ecommerce-nextjs.vercel.app/esewa/purchase-success?id=${product.id}&name=${name}&email=${email}&`,
-                  "success_url": `http://localhost:3000/esewa/purchase-success?id=${product.id}&name=${name}&email=${email}&`,
+                  // "success_url": `http://localhost:3000/esewa/purchase-success?id=${product.id}&name=${name}&email=${email}&`,
+                  "success_url": `https://e-commerce-babish9887.vercel.app/esewa/purchase-success?id=${product.id}&name=${name}&email=${email}&`,
+
 
                   "tax_amount": "0",
                   "total_amount": product.price.toString(),
