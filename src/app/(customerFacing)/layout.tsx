@@ -32,7 +32,7 @@ const CustomerLayout = ({children}:Readonly<{children:React.ReactNode}>) => {
             <NavLink href='/orders'>My Orders</NavLink>
       </div>
      { session===undefined || session===null ? (<div>
-      <Button onClick={()=>signIn("google")} variant={"outline"} className='text-black'>{session===undefined? "Loading":"Log In"}</Button>
+      <Button onClick={()=>signIn("google")} variant={"outline"} className='text-black'  disabled={session===undefined}>{session===undefined? "Loading":"Log In"}</Button>
      </div>):(
       <div className='w-10 h-10 relative rounded-full overflow-hidden hover:cursor-pointer' onClick={()=>setOpen(true)}>
             {session?.user?.image ? <Image src={session?.user?.image || Placeholder} alt='avatar' fill /> :

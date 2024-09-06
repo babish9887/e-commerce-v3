@@ -70,7 +70,6 @@ function Checkout2({product}:any) {
             form.submit();
 
             } catch (error) {
-                  console.log(error)
                   toast.error("Something Unexpected Happen! Please Try Again later")                 
             } finally{
                   setIsLoading(false)

@@ -61,7 +61,6 @@ function page() {
                   link.click()
                   URL.revokeObjectURL(blobUrl)
                 } catch (error) {
-                  console.log(error)
                 } finally{
                   setIsLoading(false)
                   setDownload("")
