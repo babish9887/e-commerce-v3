@@ -48,7 +48,7 @@ export async function addProduct(prevState:unknown, formData:FormData) {
       const fileref=ref(storage, filePath)
       const fileUpload=await uploadBytes(fileref, data.file)
       
-      await db.product.create({data:{
+      const product = await db.product.create({data:{
             name:data.name,
             description:data.description,
             price:data.price,
@@ -56,6 +56,7 @@ export async function addProduct(prevState:unknown, formData:FormData) {
             imagePath: imagePath,
             category:data.category || "None"
       }})
+      console.log(product)
       revalidatePath('/')
       revalidatePath('/products')
             redirect('/admin/products')

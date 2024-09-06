@@ -11,6 +11,7 @@ import axios from 'axios'
 
 function ProductCard({id, name, price, description, imagePath, totalOrders, position}:{id:string, name:string,price:number, description:string, imagePath:string, totalOrders?:number, position?:string | ""}) {
       const url=`https://firebasestorage.googleapis.com/v0/b/digital-oasis-35451.appspot.com/o/Images%2F${imagePath.split('/')[1]}?alt=media&token=${process.env.URL_TOKEN}`
+      // const url= `https://firebasestorage.googleapis.com/v0/b/digital-oasis-35451.appspot.com/o/Images%2F${imagePath.split('/')[1]}?alt=${process.env.URL_TOKEN}`
 
   return (
     <Card className='flex overflow-hidden flex-col'>

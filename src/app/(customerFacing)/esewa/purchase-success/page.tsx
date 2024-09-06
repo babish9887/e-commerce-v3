@@ -6,7 +6,6 @@ async function PurchaseSuccessPage({searchParams}: {
       searchParams:{id:string, name:string, email:string}
 }) {
       
-      console.log(searchParams.name, searchParams.email)
       const product=await db.product.findUnique({
             where:{id: searchParams.id} ,
             include:{

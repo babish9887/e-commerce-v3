@@ -29,15 +29,12 @@ function page() {
 
             try {
                   const email=session?.user?.email;
-                  console.log(email)
                   const res=await axios.post('/api/getUser', {email})
                   if(!res.data.user) return toast.error("You have not Purchased anything Yet!");
                   const userId=res.data.user?.id
-                  console.log(userId)
                   if(res.data.user){
                   const res=await axios.post('/api/getUserDownloads', {userId})
                   setOrders(res.data.usersOrders)
-                  console.log(res.data.usersOrders)
                   setGotPurchased(true)
                   }
       } catch (error) {

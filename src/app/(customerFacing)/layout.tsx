@@ -20,7 +20,6 @@ import Placeholder from '../../../public/placeholder.jpg'
 const CustomerLayout = ({children}:Readonly<{children:React.ReactNode}>) => {
       const {data:session}=useSession();
       const [open, setOpen]=useState(false);
-      console.log(session)
   return (
     <>
       <Nav>
@@ -36,7 +35,8 @@ const CustomerLayout = ({children}:Readonly<{children:React.ReactNode}>) => {
       <Button onClick={()=>signIn("google")} variant={"outline"} className='text-black'>{session===undefined? "Loading":"Log In"}</Button>
      </div>):(
       <div className='w-10 h-10 relative rounded-full overflow-hidden hover:cursor-pointer' onClick={()=>setOpen(true)}>
-            <Image src={session?.user?.image || Placeholder} alt='avatar' fill />
+            {session?.user?.image ? <Image src={session?.user?.image || Placeholder} alt='avatar' fill /> :
+            <h1 className='text-2xl'>{session?.user?.name?.split(" ")[0][0]}{session?.user?.name?.split(" ")[1][0]}</h1>}
       </div>
      )}
       </Nav>

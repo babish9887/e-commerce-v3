@@ -27,7 +27,6 @@ function Checkout2({product}:any) {
             try {
                   const email=session.user?.email;
                   const name=session.user?.name;
-                  console.log(email)
                   const res=await axios.post('/api/checkdownload',{email, product:product.id})
                   if(!res.data.success)
                         return toast.error(res.data.message, {duration:4000})
